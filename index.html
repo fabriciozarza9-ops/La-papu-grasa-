@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUB RENACIDOS FC ⚽</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --azul-oscuro: #1b4965;
+            --dorado: #cf9f3e;
+            --rojo-milan: #bc002d;
+            --negro: #0b1a24; /* Un negro azulado más rico */
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una fuente más moderna */
+            margin: 0;
+            background-color: var(--negro);
+            color: var(--blanco);
+        }
+
+        header {
+            background-color: #000; /* Fondo negro sólido para el header */
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--dorado);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-club {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--dorado);
+            box-shadow: 0 0 20px var(--dorado);
+            background-color: #000;
+            object-fit: cover; /* Asegura que la imagen no se estire */
+        }
+
+        /* Truco onerror para que no se vea el círculo negro si falla la imagen */
+        .logo-club[src=""], .logo-club:not([src]) {
+            display: none;
+        }
+
+        .header-fallback-icon {
+            font-size: 80px;
+            color: var(--dorado);
+            display: none;
+        }
+
+        .logo-club:not([src]) + .header-fallback-icon, 
+        .logo-club[src=""] + .header-fallback-icon {
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .badge-rojo {
+            background-color: var(--rojo-milan);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .container { 
+            width: 95%; 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            border-left: 6px solid var(--dorado);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--dorado);
+        }
+
+        h2 { 
+            color: var(--dorado); 
+            text-transform: uppercase; 
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        .location-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            border: 2px solid var(--dorado);
+            margin-bottom: 20px;
+        }
+
+        .btn-maps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #4285F4;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            gap: 10px;
+        }
+
+        .school-info {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+
+        .school-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-ws {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #25d366;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            gap: 10px;
+        }
+
+        .footer { 
+            text-align: center; 
+            padding: 30px; 
+            color: #777; 
+            border-top: 1px solid rgba(255,255,255,0.05); 
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="tu_escudo.png" alt="Escudo" class="logo-club">
+        <i class="fas fa-futbol header-fallback-icon"></i>
+    </div>
+    <h1>CLUB RENACIDOS FC 🥀</h1>
+    <span class="badge-rojo">ESTADIO SAN ROQUE</span>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-map-marked-alt card-icon"></i>
+            <h2>Nuestra Cancha</h2>
+        </div>
+        <p class="location-text">Ubicación: GXVQ+WW8, Caaguazú 050204.</p>
+        
+        <iframe class="map-frame" 
+            src="https://www.google.com/maps/search/?api=1&query=GXVQ+WW8+Caaguazu3" 
+            allowfullscreen="" loading="lazy"></iframe>
+
+        <a href="https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICei9HB6gE!2e10!4m2!3m1!1s0x945f3ddee7f29c87:0x769a8d32b588dc0b" class="btn-maps" target="_blank">
+            <i class="fas fa-location-arrow"></i> LLEGAR A LA CANCHA
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-futbol card-icon"></i>
+            <h2>Escuela de Fútbol</h2>
+        </div>
+        <p>Sumate a los entrenamientos del Renacidos FC.</p>
+        <ul class="school-info">
+            <li>📅 Horarios: Todos los días de 13:00 a 18:00 hs.</li>
+            <li>⚠️ Regla: Mínimo 10 años de edad.</li>
+        </ul>
+        
+        <a href="https://wa.me/595984596034" class="btn-ws" target="_blank">
+            <i class="fab fa-whatsapp"></i> CONTACTAR POR WHATSAPP
+        </a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>Club Renacidos FC © 2026<br>Caaguazú, Paraguay</p>
+</div>
+
+</body>
+          </html>
+          
